@@ -40,7 +40,7 @@ if ( ! class_exists( 'WC_Auto_Stock_Restore' ) ) {
 						$qty = apply_filters( 'woocommerce_order_item_quantity', $item['qty'], $this, $item );
 						$new_quantity = $_product->increase_stock( $qty );
 						do_action( 'woocommerce_auto_stock_restored', $_product, $item );
-						$order->add_order_note( sprintf( __( 'Item foi aumentado de %s para %s.', 'woocommerce' ), $item['product_id'], $old_stock, $new_quantity) );
+						$order->add_order_note( sprintf( __( 'O produto %s voltou para estoque.', 'woocommerce' ), $item['product_id'], $old_stock, $new_quantity) );
 						$order->send_stock_notifications( $_product, $new_quantity, $item['qty'] );
 					}
 				}
